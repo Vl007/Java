@@ -1,6 +1,7 @@
 package com.company;
 
 import java.lang.Math;
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.stream.*;
 
@@ -37,36 +38,66 @@ public class Main {
 //  Задание №2 к уроку 3
     public static void main(String[] args) {
 
-//        1 способ
+//        1 способ решение данной задачи
 //        int[] integerArray = new int[20];
 //
-//        for (int i = 0; i <= integerArray.length; i++) {
+//        for (int i = 0; i < integerArray.length; i++) {
 //            integerArray[i] = (int) (Math.random() *10000);
 //        }
 //
-//        System.out.println(ANSI_RED + "Заполнение массива с помощтю цикла псевдослучайными значениями!" + ANSI_RESET);
+//        System.out.println(ANSI_RED + "\nЗаполнение массива с помощтю цикла псевдослучайными значениями:\n" + ANSI_RESET);
 //
-//        for (int i = 0; i <= integerArray.length; i++) {
-//            System.out.println(integerArray[i] + ",");
+//        for (int i = 0; i < integerArray.length; i++) {
+//            System.out.println("Индекс элемента массива " + i + ": " + integerArray[i] + ",\n");
+//        }
+//        // Еще один вариант подсчета суммы элементов массива!
+//        int sum = IntStream.of(integerArray).sum();
+//        System.out.println(ANSI_BLUE + "Сумма элементов массива: " + ANSI_RED + sum + ANSI_RESET);
+//
+//        // Это уже как требовалось в задании с помощью метода!
+//        System.out.println(ANSI_BLUE + "\nСумма элементов массива: " + ANSI_RED + getSum(integerArray) + ANSI_RESET);
+//
+//        // Сумма либо делится нацело на 2, либо нет.
+//        if (getSum(integerArray)%2 == 0) {
+//            System.out.println(ANSI_GREEN +"\nЧЕТНО" + ANSI_RESET);
+//        } else {
+//            System.out.println(ANSI_RED +"\nНЕЧЕТНО" + ANSI_RESET);
 //        }
 
-        // 2 способ
+        // 2 способ решение данной задачи
 
         int[] integerArray = new int[20];
         Random random = new Random();
 
-        for (int i = 0; i <= integerArray.length; i++) {
-            integerArray[i] = random.nextInt(10000);
+        for (int i = 0; i < integerArray.length; i++) {
+            integerArray[i] = random.nextInt(999999);
         }
 
-        System.out.println(ANSI_RED + "Заполнение массива с помощтю цикла псевдослучайными значениями!" + ANSI_RESET);
+        System.out.println(ANSI_RED + "\nЗаполнение массива с помощтю цикла псевдослучайными значениями:\n" + ANSI_RESET);
 
-        for (int i = 0; i <= integerArray.length; i++) {
-            System.out.println(integerArray[i] + ",");
+        for (int i = 0; i < integerArray.length; i++) {
+            System.out.println("Индекс элемента массива " + i + ": " + integerArray[i] + ",\n");
         }
 
-        long sum = IntStream.of(integerArray).sum();
-        System.out.println("The sum is " + sum);
+// Еще один вариант подсчета суммы элементов массива!
+        int sum = IntStream.of(integerArray).sum();
+        System.out.println(ANSI_BLUE + "Сумма элементов массива: " + ANSI_RED + sum + ANSI_RESET);
 
+        System.out.println(ANSI_BLUE + "\nСумма элементов массива: " + ANSI_RED + getSum(integerArray) + ANSI_RESET);
+
+// Сумма либо делится нацело на 2, либо нет.
+        if (getSum(integerArray)%2 == 0) {
+            System.out.println(ANSI_GREEN +"\nЧЕТНО" + ANSI_RESET);
+        } else {
+            System.out.println(ANSI_RED +"\nНЕЧЕТНО" + ANSI_RESET);
+        }
+    }
+
+    public static int getSum(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
     }
 }
