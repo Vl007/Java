@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.types_of_trains.*;
+
 import java.lang.Math;
 import java.sql.SQLOutput;
 import java.util.Random;
@@ -36,7 +38,7 @@ public class Main {
 //    }
 
 //  Задание №2 к уроку 3
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 
 //        1 способ решение данной задачи
 //        int[] integerArray = new int[20];
@@ -64,40 +66,63 @@ public class Main {
 //            System.out.println(ANSI_RED +"\nНЕЧЕТНО" + ANSI_RESET);
 //        }
 
-        // 2 способ решение данной задачи
+//        // 2 способ решение данной задачи
+//
+//        int[] integerArray = new int[20];
+//        Random random = new Random();
+//
+//        for (int i = 0; i < integerArray.length; i++) {
+//            integerArray[i] = random.nextInt(999999);
+//        }
+//
+//        System.out.println(ANSI_RED + "\nЗаполнение массива с помощтю цикла псевдослучайными значениями:\n" + ANSI_RESET);
+//
+//        for (int i = 0; i < integerArray.length; i++) {
+//            System.out.println("Индекс элемента массива " + i + ": " + integerArray[i] + ",\n");
+//        }
+//
+//// Еще один вариант подсчета суммы элементов массива!
+//        int sum = IntStream.of(integerArray).sum();
+//        System.out.println(ANSI_BLUE + "Сумма элементов массива: " + ANSI_RED + sum + ANSI_RESET);
+//
+//        System.out.println(ANSI_BLUE + "\nСумма элементов массива: " + ANSI_RED + getSum(integerArray) + ANSI_RESET);
+//
+//// Сумма либо делится нацело на 2, либо нет.
+//        if (getSum(integerArray)%2 == 0) {
+//            System.out.println(ANSI_GREEN +"\nЧЕТНО" + ANSI_RESET);
+//        } else {
+//            System.out.println(ANSI_RED +"\nНЕЧЕТНО" + ANSI_RESET);
+//        }
+//    }
 
-        int[] integerArray = new int[20];
-        Random random = new Random();
+//    public static int getSum(int[] array) {
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            sum += array[i];
+//        }
+//        return sum;
+//    }
 
-        for (int i = 0; i < integerArray.length; i++) {
-            integerArray[i] = random.nextInt(999999);
-        }
+      public static void main(String[] args) {
 
-        System.out.println(ANSI_RED + "\nЗаполнение массива с помощтю цикла псевдослучайными значениями:\n" + ANSI_RESET);
+          Passenger Peregrine = new Passenger();
+          Peregrine.addFraightWagon(1);
+          Peregrine.transportation("10 почтовых мешков", "Санкт-Петербург");
 
-        for (int i = 0; i < integerArray.length; i++) {
-            System.out.println("Индекс элемента массива " + i + ": " + integerArray[i] + ",\n");
-        }
+          Household b512 = new Household();
+          b512.addFraightWagon(10);
+          b512.transportation("Песок", "Сочи");
 
-// Еще один вариант подсчета суммы элементов массива!
-        int sum = IntStream.of(integerArray).sum();
-        System.out.println(ANSI_BLUE + "Сумма элементов массива: " + ANSI_RED + sum + ANSI_RESET);
+          Sanitary venetka = new Sanitary();
+          venetka.addFraightWagon(2);
+          venetka.transportation("3 единицы мед. оборудования", "Уфа");
 
-        System.out.println(ANSI_BLUE + "\nСумма элементов массива: " + ANSI_RED + getSum(integerArray) + ANSI_RESET);
+          Military warm324 = new Military();
+          warm324.addFraightWagon(3);
+          warm324.transportation("1700 единиц боевой техники", "Ростовская область");
 
-// Сумма либо делится нацело на 2, либо нет.
-        if (getSum(integerArray)%2 == 0) {
-            System.out.println(ANSI_GREEN +"\nЧЕТНО" + ANSI_RESET);
-        } else {
-            System.out.println(ANSI_RED +"\nНЕЧЕТНО" + ANSI_RESET);
-        }
-    }
-
-    public static int getSum(int[] array) {
-        int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
-        }
-        return sum;
-    }
+          Cargo tygach1 = new Cargo();
+          tygach1.addFraightWagon(10);
+          tygach1.transportation("100 машин", "Москву");
+      }
 }
