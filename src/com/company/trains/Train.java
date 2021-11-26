@@ -1,4 +1,4 @@
-package com.company.types_of_trains;
+package com.company.trains;
 
 public class Train {
 
