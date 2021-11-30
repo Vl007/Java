@@ -27,10 +27,15 @@ public class Main {
           tygach1.refuel(10);
           tygach1.transportation("100 машин", "Москву");
 
-          passengers Alex = new passengers();
+          Passengers Alex = new Passengers();
           Alex.go("China");
           Alex.byTickets(13);
           Alex.go("Arabia");
+
+          Guides Abdulis = new Guides();
+          Abdulis.go("China\n");
+          Abdulis.transportation("Мешок писем", "Москву\n");
+          Abdulis.transfer("Чемодан", "Сочи\n");
 
       }
 
