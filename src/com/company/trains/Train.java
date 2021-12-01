@@ -1,31 +1,27 @@
 package com.company.trains;
 
-public class Train {
+import com.company.interfaces.Transferer;
 
-    private int tonnage;
-    private final int cargoCapacityVan;
-    private final int addVan;
+public abstract class Train implements Transferer {
 
+    private int fuel;
 
-    public Train(int cargoCapacityVan, int addVan) {
-        this.cargoCapacityVan = cargoCapacityVan;
-        this.addVan = addVan;
+    public abstract void transportation(Object cargo, String destination);
+
+    public abstract void toGo(String destination);
+
+    @Override
+    public abstract void transfer(Object cargo, String destination);
+
+    public void refuel(int liters) {
+        fuel += liters;
     }
 
-    public void transportation(Object cargo, String destination) {
-
-        if (tonnage < cargoCapacityVan) {
-            System.out.println("Осуществить транспортировку невозможно, не достаточно места!");
-            return;
-        }
-        System.out.printf("Осуществляю перевозку %s в %s\n", cargo, destination);
-        tonnage -= cargoCapacityVan;
-    }
-
-    public void addFraightWagon(int wagon) {
-        tonnage += wagon;
-        if (tonnage > addVan) tonnage = addVan;
-        System.out.println("Увеличили грузоподьемность на " + wagon + " вагон(ов)");
+    protected boolean useUpFuel(int liters) {
+        int newFuelLevel = fuel - liters;
+        if (newFuelLevel < 0) return false;
+        fuel = newFuelLevel;
+        return true;
     }
 
 }

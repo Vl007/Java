@@ -31,6 +31,7 @@ public class Main {
           Alex.go("China");
           Alex.byTickets(13);
           Alex.go("Arabia");
+          Alex.travel("Париж\n");
 
           Guides Abdulis = new Guides();
           Abdulis.go("China\n");
