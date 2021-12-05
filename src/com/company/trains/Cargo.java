@@ -6,7 +6,7 @@ public class Cargo extends Train {
 
     @Override
     public void transportation(Object cargo, String destination){
-        if (!destination.matches("[a-zA-Z_-]+")) {
+        if (!destination.matches("[a-zA-Zа-яА-Я _-]+")) {
             throw new TransportationFormatException(destination);
         }
         System.out.println(
