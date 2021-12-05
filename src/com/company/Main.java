@@ -8,7 +8,7 @@ public class Main {
       public static void main(String[] args) {
 
           Passenger Peregrine = new Passenger();
-          Peregrine.refuel(11);
+          Peregrine.refuel(18);
           Peregrine.transportation("10 почтовых мешков", "Санкт-Петербург");
 
           Household b512 = new Household();
@@ -24,13 +24,14 @@ public class Main {
           warm324.transportation("1700 единиц боевой техники", "Ростовская область");
 
           Cargo tygach1 = new Cargo();
-          tygach1.refuel(10);
-          tygach1.transportation("100 машин", "Москву");
+          tygach1.refuel(13);
+          tygach1.transportation("100 машин","Москва");
 
           Passengers Alex = new Passengers();
           Alex.go("China");
           Alex.byTickets(13);
           Alex.go("Arabia");
+          Alex.transportation("ettete", "tututu");
           Alex.travel("Париж\n");
 
           Guides Abdulis = new Guides();
